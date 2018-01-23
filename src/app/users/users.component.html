@@ -1,15 +1,6 @@
-<div *ngIf="selectedUser"> 
-  <!-- *ngIf is necessary here, because if selectedUser is undefined, then the follow code will break -->
-    <h2>{{ selectedUser.name }} Details</h2>
-    <div>
-      <span>id: </span>{{selectedUser.id}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="selectedUser.name" placeholder="name">
-      </label>
-    </div>
-</div>
-<br/>
+
+<app-user-detail [user]="selectedUser"></app-user-detail>
+
 <h2>List of Users</h2>
 <ul class="users">
   <li *ngFor="let user of users" 

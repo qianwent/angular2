@@ -1,0 +1,11 @@
+<div *ngIf="user"> 
+    <!-- *ngIf is necessary here, because if user is undefined, then the follow code will break -->
+      <h2>{{ user.name }} Details</h2>
+      <div>
+        <span>id: </span>{{user.id}}</div>
+      <div>
+        <label>name:
+          <input [(ngModel)]="user.name" placeholder="name">
+        </label>
+      </div>
+  </div>
