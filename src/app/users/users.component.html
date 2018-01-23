@@ -1,0 +1,25 @@
+<div *ngIf="selectedUser"> 
+  <!-- *ngIf is necessary here, because if selectedUser is undefined, then the follow code will break -->
+    <h2>{{ selectedUser.name }} Details</h2>
+    <div>
+      <span>id: </span>{{selectedUser.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedUser.name" placeholder="name">
+      </label>
+    </div>
+</div>
+<br/>
+<h2>List of Users</h2>
+<ul class="users">
+  <li *ngFor="let user of users" 
+    [class.selected]="user == selectedUser"
+    (click)="onSelect(user)"> <!-- *ngFor is Angular's repeater directive -->
+    <span class="badge">{{user.id}}</span> {{user.name}}
+  </li>
+</ul>
+<p>
+  <!-- <h2>not allowed in side <p></h2> -->
+    <!-- <div>abc</div> -->
+  <span>aaa</span>
+</p>
