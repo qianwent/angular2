@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'app/model/user';
-import { MOCKUSERS } from 'app/mock/mock_users';
+import { UserService } from 'app/user.service';
+// import { MOCKUSERS } from 'app/mock/mock_users';
 
 @Component({
   selector: 'app-users',
@@ -10,12 +11,15 @@ import { MOCKUSERS } from 'app/mock/mock_users';
 export class UsersComponent implements OnInit {
 
   //initialize single object
-  user : User = {
-    id: 1,
-    name: "Wentao Qian",
-  };
+  // user : User = {
+  //   id: 1,
+  //   name: "Wentao Qian",
+  // };
 
-  users = MOCKUSERS;
+  // users = MOCKUSERS;
+
+  //use service to fetch user data
+  users : User[];
 
   selectedUser: User;
 
@@ -24,10 +28,15 @@ export class UsersComponent implements OnInit {
     console.log('user: ' + user + ' is clicked!');
   }
 
-  constructor() {
-   }
+  constructor(private userService: UserService) {
+  }
+
+  getUsers(): void {
+    this.users = this.userService.getUsers();
+  }
 
   ngOnInit() {
+    this.getUsers();//don't forget () to execute the function
   }
 
 }
