@@ -32,7 +32,10 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.users = this.userService.getUsers();
+    //this.users = this.userService.getUsers();
+    // this.userService.getUsers().subscribe(users => this.users = users);
+    // 不要在意lambda表达式的输入，重名可能会引起一些误解，但要知道这个表达式已经在方法里了，自然可以直接把getUsers方法return的值当做输入
+    this.userService.getUsers().subscribe(a => this.users = a);
   }
 
   ngOnInit() {
