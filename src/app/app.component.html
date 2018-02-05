@@ -2,5 +2,9 @@
   {{title}}
 </h1>
 <br/>
-<app-users></app-users>
+<!-- <app-users></app-users> --><!-- 这个不再使用，用router-outlet来取代 -->
+<nav>
+  <a routerLink="/users">Users</a>
+</nav>
+<router-outlet></router-outlet>
 <app-messages></app-messages>

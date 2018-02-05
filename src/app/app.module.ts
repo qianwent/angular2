@@ -9,16 +9,20 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserService } from 'app/user.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from 'app/message.service';
+import { AppRoutingModule }     from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     UserDetailComponent,
-    MessagesComponent //generated automatically with CLI
+    MessagesComponent,
+    DashboardComponent //generated automatically with CLI
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     HttpModule
   ],
